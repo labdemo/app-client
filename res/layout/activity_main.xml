@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/whitecolor" >
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/mLine" >
+    </android.support.v4.view.ViewPager>
+    
+    
+    <TextView
+        android:id="@+id/mLine"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_above="@+id/bottomNavigation"
+        android:background="@color/stokecolor" />
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        android:layout_alignParentBottom="true"
+        android:padding="5dp" >
+        <LinearLayout
+            android:id="@+id/homePageLayout"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+            <ImageView
+                android:id="@+id/homeImage"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_launcher" />
+            <TextView
+                android:id="@+id/homeText"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="@string/home_page"
+                android:textSize="11sp" />"
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/findPageLayout"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+            <ImageView
+                android:id="@+id/findImage"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_launcher" />
+            <TextView
+                android:id="@+id/findText"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="@string/find"
+                android:textSize="11sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/minePageLayout"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+            <ImageView
+                android:id="@+id/mineImage"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_launcher" />
+            <TextView
+                android:id="@+id/mineText"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="@string/mine"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+    
+</RelativeLayout>
