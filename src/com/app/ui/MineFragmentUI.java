@@ -10,12 +10,12 @@ import com.app.base.R;
 
 public class MineFragmentUI extends BaseFragment{
 	
-	private View view;
+	private View mineView;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		view = inflater.inflate(R.layout.fragment_mine, null);
-		return view;
+		mineView = inflater.inflate(R.layout.fragment_mine, null);
+		return mineView;
 	}
 }

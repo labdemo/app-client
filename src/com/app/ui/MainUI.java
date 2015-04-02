@@ -3,7 +3,6 @@ package com.app.ui;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -19,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.app.base.BaseUI;
+import com.app.base.BaseViewPager;
 import com.app.base.R;
 import com.app.util.ActivityCollector;
 
@@ -30,7 +30,7 @@ public class MainUI extends BaseUI {
 	private List<ImageView> imageList;
 	private TextView homeText, findText, mineText;
 	private List<TextView> textList;
-	private ViewPager viewPager;
+	private BaseViewPager viewPager;
 	
 	private long lastPressBackTime = 0;
 	
@@ -74,15 +74,9 @@ public class MainUI extends BaseUI {
 		fragmentList.add(findFragment);
 		fragmentList.add(mineFragment);
 		
-		viewPager = (ViewPager)findViewById(R.id.viewPager);
-		viewPager.setOnTouchListener(new OnTouchListener() {
-			
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				//返回true在此拦截触摸事件，ViewPager得不到触摸事件，即可使得ViewPager不能滑动
-				return true;
-			}
-		});
+		viewPager = (BaseViewPager)findViewById(R.id.viewPager);
+		//禁止滑动
+		viewPager.setScanScroll(false);
 		
 		FragmentManager fragmentManager = this.getSupportFragmentManager();
 		FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(fragmentManager) {

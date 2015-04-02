@@ -4,13 +4,19 @@
     android:layout_height="fill_parent"
     android:background="@color/whitecolor" >
     
-    <android.support.v4.view.ViewPager
+    <com.app.base.BaseViewPager
         android:id="@+id/viewPager"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_above="@+id/mLine" >
-    </android.support.v4.view.ViewPager>
+    </com.app.base.BaseViewPager>
     
+<!--     <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/mLine" >
+    </android.support.v4.view.ViewPager> -->
     
     <TextView
         android:id="@+id/mLine"

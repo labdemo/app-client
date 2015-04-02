@@ -8,9 +8,12 @@
     <color name="whitecolor">#FFFFFF</color>
     
     
-    
-    
-    
+    <!-- home -->
+    <color name="red_module">#F15D5D</color>
+    <color name="blue_gray_module">#2F87D2</color>
+    <color name="yellow_module">#F28923</color>
+    <color name="green_module">#7EC72D</color>
+    <color name="blue_module">#35A8ED</color>
     
     
     <color name="titlemenuback">#FAFAFA</color>

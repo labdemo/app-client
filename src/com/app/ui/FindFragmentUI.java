@@ -10,12 +10,12 @@ import com.app.base.R;
 
 public class FindFragmentUI extends BaseFragment {
 	
-	private View view;
+	private View findView;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		view = inflater.inflate(R.layout.fragment_find, null);
-		return view;
+		findView = inflater.inflate(R.layout.fragment_find, null);
+		return findView;
 	}
 }

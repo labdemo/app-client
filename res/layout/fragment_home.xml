@@ -2,11 +2,92 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:padding="5dp" >
     
-    <TextView
+    <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:text="1" />
+        android:layout_height="fill_parent" >
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            
+            <LinearLayout
+                android:layout_width="fill_parent"
+            	android:layout_height="150dp"
+            	android:orientation="horizontal" >
+
+                <com.app.base.BaseHomeButton
+                    android:id="@+id/requestBookButton"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@color/red_module"
+                    android:text="@string/requst_book"
+                    android:textSize="25sp"
+                    android:textColor="@color/whitecolor" />
+                
+                <TextView
+                    android:layout_width="5dp"
+                    android:layout_height="fill_parent"
+                    android:background="@color/whitecolor" />
+
+                <com.app.base.BaseHomeButton
+                    android:id="@+id/bookStoreButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="fill_parent"
+                    android:background="@color/blue_gray_module"
+                    android:text="@string/book_store"
+                    android:textSize="25sp"
+                    android:textColor="@color/whitecolor" />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+                <com.app.base.BaseHomeButton
+                    android:id="@+id/teachingBookButton"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@color/green_module"
+                    android:text="@string/teaching_book"
+                    android:textSize="25sp"
+                    android:textColor="@color/whitecolor" />
+                <TextView
+                    android:layout_width="5dp"
+                    android:layout_height="fill_parent"
+                    android:background="@color/whitecolor" />
+                <com.app.base.BaseHomeButton
+                    android:id="@+id/goabroadBookButton"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@color/blue_module"
+                    android:text="@string/goabroad_book"
+                    android:textSize="25sp"
+                    android:textColor="@color/whitecolor" />
+                <TextView
+                    android:layout_width="5dp"
+                    android:layout_height="fill_parent"
+                    android:background="@color/whitecolor" />
+                <com.app.base.BaseHomeButton
+                    android:id="@+id/examfpgBookButton"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@color/yellow_module"
+                    android:text="@string/examfpg_book"
+                    android:textSize="25sp"
+                    android:textColor="@color/whitecolor" />
+            </LinearLayout>
+        </LinearLayout>
+        
+    </ScrollView>
 
 </LinearLayout>

@@ -17,6 +17,13 @@
     <string name="mine">我的</string>
     <string name="press_twice_exit">再按一次退出程序</string>
     
+    <!-- home -->
+    <string name="requst_book">求书</string>
+    <string name="book_store">书库</string>
+    <string name="teaching_book">教材</string>
+    <string name="goabroad_book">出国</string>
+    <string name="examfpg_book">考研</string>
+    
     <!-- PullToRefresh -->
     <string name="pull_to_refresh">下拉刷新</string>
     <string name="release_to_refresh">释放立即刷新</string>
