@@ -2,6 +2,10 @@
 <resources>
     
     
+    <!-- main -->
+    <color name="titlebar_blue">#52ADE7</color>
+    
+    
     <color name="loginbuttonnormal">#1FBAf3</color>
     <color name="loginbuttonsel">#19A5D8</color>
     <color name="stokecolor">#DADADA</color>

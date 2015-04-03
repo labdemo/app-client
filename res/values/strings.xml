@@ -16,6 +16,7 @@
     <string name="find">发现</string>
     <string name="mine">我的</string>
     <string name="press_twice_exit">再按一次退出程序</string>
+    <string name="search_book">在这里输入想要搜索的书籍</string>
     
     <!-- home -->
     <string name="requst_book">求书</string>

@@ -2,21 +2,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:padding="5dp" >
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/titlebar_blue" >
+        
+        <EditText
+            android:id="@+id/searchText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/pic_serach"
+            android:drawablePadding="5dp"
+            android:textSize="14sp"
+            android:textColor="@color/whitecolor"
+            android:hint="@string/search_book" />
+    </LinearLayout>
     
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent"
+         >
         
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:padding="5dp" >
             
             <LinearLayout
                 android:layout_width="fill_parent"
-            	android:layout_height="150dp"
+            	android:layout_height="160dp"
             	android:orientation="horizontal" >
 
                 <com.app.base.BaseHomeButton
