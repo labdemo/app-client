@@ -6,6 +6,8 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="21" />
+    
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:name="com.app.base.BaseApplication"
@@ -23,8 +25,39 @@
         </activity>
         
         <activity
-            android:name="com.app.ui.MainUI"
-            android:windowSoftInputMode="stateVisible|adjustPan" >
+            android:name="com.app.ui.MainUI" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.app.ui.SearchUI" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.app.ui.RequestBookListUI" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.app.ui.FillBookInfoUI" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.app.ui.BookListUI" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>

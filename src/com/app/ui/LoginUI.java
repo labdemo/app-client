@@ -23,10 +23,13 @@ public class LoginUI extends BaseActivity{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		
 		//如果已经登录，则直接跳转至main，否则显示登陆界面
+//		if(BaseAuth.isLogin()){
+//			this.forward(MainUI.class);
+//			this.finish();
+//		}
 		setContentView(R.layout.activity_login);
 		
 		settings = getPreferences(Context.MODE_PRIVATE);
@@ -44,12 +47,8 @@ public class LoginUI extends BaseActivity{
 			accountText.setText(settings.getString("username", ""));
 			passwordText.setText(settings.getString("password", ""));
 			isRememberedBox.setChecked(true);
-		} else {
-			
 		}
-		
 		login.setOnClickListener(new OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
@@ -76,6 +75,8 @@ public class LoginUI extends BaseActivity{
 						toast("用户名和密码不能为空！");
 					}
 					break;
+				default:
+					break;
 				}
 			}
 		});
@@ -84,10 +85,10 @@ public class LoginUI extends BaseActivity{
 	private void doLogin(){
 		
 		
-		
-		
 		startActivity(new Intent(LoginUI.this, MainUI.class));
 		this.finish();
 	}
+	
+	
 	
 }

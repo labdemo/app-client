@@ -4,6 +4,8 @@
     android:layout_height="fill_parent"
     android:background="@color/whitecolor" >
     
+    
+    
     <com.app.base.BaseViewPager
         android:id="@+id/viewPager"
         android:layout_width="fill_parent"
