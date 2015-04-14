@@ -10,6 +10,7 @@
     <color name="loginbuttonsel">#19A5D8</color>
     <color name="stokecolor">#DADADA</color>
     <color name="whitecolor">#FFFFFF</color>
+    <color name="bluegreen">#1BA9BA</color>
     
     
     <!-- home -->
@@ -18,6 +19,10 @@
     <color name="yellow_module">#F28923</color>
     <color name="green_module">#7EC72D</color>
     <color name="blue_module">#35A8ED</color>
+    
+    
+    
+    
     
     
     <color name="titlemenuback">#FAFAFA</color>

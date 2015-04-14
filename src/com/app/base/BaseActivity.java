@@ -25,6 +25,16 @@ public class BaseActivity extends FragmentActivity {
 		initReceivers();
 	}
 	
+/*	public void initBaseEvents(){
+		titleBackImage = (ImageView)findViewById(R.id.titleBackImage);
+		titleText = (TextView)findViewById(R.id.titleText);
+		titleBackImage.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				ActivityCollector.removeActivity((Activity)BaseApplication.getContext());
+			}
+		});
+	}*/
 
 	private void initReceivers() {
 		IntentFilter netFilter = new IntentFilter();
@@ -42,7 +52,6 @@ public class BaseActivity extends FragmentActivity {
 			intent.setClass(this, classObj);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
-			this.finish();
 		}
 		
 		public void forward(Class<?> classObj, Bundle prama){
@@ -51,7 +60,6 @@ public class BaseActivity extends FragmentActivity {
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			intent.putExtras(prama);
 			startActivity(intent);
-			this.finish();
 		}
 	
 	@Override

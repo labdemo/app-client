@@ -4,37 +4,15 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
     
-    <LinearLayout
+    <com.app.ui.TitleLayout
+        android:id="@+id/homeTitleLayout"
         android:layout_width="fill_parent"
-        android:layout_height="55dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        android:background="@color/titlebar_blue" >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/pic_serach" />
-        
-        <TextView
-            android:id="@+id/searchTipText"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:padding="5dp"
-            android:textSize="16sp"
-            android:text="@string/search_book"
-            android:textColor="@color/whitecolor" />
-        
-    </LinearLayout>
+        android:layout_height="wrap_content" >
+    </com.app.ui.TitleLayout>
     
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-         >
+        android:layout_height="fill_parent" >
         
         <LinearLayout
             android:layout_width="fill_parent"
@@ -63,12 +41,12 @@
                     android:background="@color/whitecolor" />
 
                 <com.app.base.BaseHomeButton
-                    android:id="@+id/bookStoreButton"
+                    android:id="@+id/registerBookButton"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="fill_parent"
                     android:background="@color/blue_gray_module"
-                    android:text="@string/book_store"
+                    android:text="@string/register_book"
                     android:textSize="25sp"
                     android:textColor="@color/whitecolor" />
             </LinearLayout>
@@ -114,8 +92,21 @@
                     android:textSize="25sp"
                     android:textColor="@color/whitecolor" />
             </LinearLayout>
+            
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="10dp"
+                android:background="@color/whitecolor" />
+            <com.app.base.BaseHomeButton
+                android:id="@+id/hotBookButton"
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:background="@color/bluegreen"
+                android:text="@string/specialty_hotbook"
+                android:textSize="25sp"
+                android:textColor="@color/whitecolor" />
+            
         </LinearLayout>
-        
     </ScrollView>
 
 </LinearLayout>

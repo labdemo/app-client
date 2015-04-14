@@ -22,10 +22,10 @@ import com.app.util.ActivityCollector;
 public class MainUI extends BaseUI {
 	
 	private List<Fragment> fragmentList;
-	private LinearLayout homePageLayout, findPageLayout, minePageLayout;
-	private ImageView homeImage, findImage, mineImage;
+	private LinearLayout homePageLayout, onGoingPageLayout, findPageLayout, minePageLayout;
+	private ImageView homeImage, onGoingImage, findImage, mineImage;
 	private List<ImageView> imageList;
-	private TextView homeText, findText, mineText;
+	private TextView homeText, onGoingText, findText, mineText;
 	private List<TextView> textList;
 	private BaseViewPager viewPager;
 	
@@ -41,6 +41,7 @@ public class MainUI extends BaseUI {
 
 	private void initViews() {
 		homeImage = (ImageView)findViewById(R.id.homeImage);
+		onGoingImage = (ImageView)findViewById(R.id.onGoingImage);
 		findImage = (ImageView)findViewById(R.id.findImage);
 		mineImage = (ImageView)findViewById(R.id.mineImage);
 		imageList = new ArrayList<ImageView>();
@@ -49,6 +50,7 @@ public class MainUI extends BaseUI {
 		imageList.add(mineImage);
 		
 		homeText = (TextView)findViewById(R.id.homeText);
+		onGoingText = (TextView)findViewById(R.id.onGoingText);
 		findText = (TextView)findViewById(R.id.findText);
 		mineText = (TextView)findViewById(R.id.mineText);
 		textList = new ArrayList<TextView>();
@@ -57,17 +59,21 @@ public class MainUI extends BaseUI {
 		textList.add(mineText);
 		
 		homePageLayout = (LinearLayout)findViewById(R.id.homePageLayout);
+		onGoingPageLayout = (LinearLayout)findViewById(R.id.onGoingPageLayout);
 		findPageLayout = (LinearLayout)findViewById(R.id.findPageLayout);
 		minePageLayout = (LinearLayout)findViewById(R.id.minePageLayout);
 		homePageLayout.setOnClickListener(new mOnClickListener(0));
-		findPageLayout.setOnClickListener(new mOnClickListener(1));
-		minePageLayout.setOnClickListener(new mOnClickListener(2));
+		onGoingPageLayout.setOnClickListener(new mOnClickListener(1));
+		findPageLayout.setOnClickListener(new mOnClickListener(2));
+		minePageLayout.setOnClickListener(new mOnClickListener(3));
 		
 		fragmentList = new ArrayList<Fragment>();
 		Fragment homeFragment = new HomeFragmentUI();
+		Fragment onGoingFragment = new OnGoingFragmentUI();
 		Fragment findFragment = new FindFragmentUI();
 		Fragment mineFragment = new MineFragmentUI();
 		fragmentList.add(homeFragment);
+		fragmentList.add(onGoingFragment);
 		fragmentList.add(findFragment);
 		fragmentList.add(mineFragment);
 		

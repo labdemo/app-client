@@ -16,6 +16,7 @@ public class ActivityCollector {
 	
 	public static void removeActivity(Activity activity){
 		activityList.remove(activity);
+		activity.finish();
 	}
 	
 	public static void finishAllActivity(){
