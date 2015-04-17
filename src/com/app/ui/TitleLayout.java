@@ -11,9 +11,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.app.base.BaseActivity;
+import com.app.base.BaseTitleLayout;
 import com.app.base.R;
 
-public class TitleLayout extends RelativeLayout {
+public class TitleLayout extends BaseTitleLayout {
 	
 	private TextView titleCenterText,titleBackText, titleRightText;
 

@@ -29,6 +29,11 @@
     <string name="goabroad_book">出国</string>
     <string name="examfpg_book">考研</string>
     <string name="specialty_hotbook">专业热门</string>
+    
+    <!-- find -->
+    <string name="findtitle_text">发现惊喜</string>
+    <string name="quickly_catch">快速抢单</string>
+    <string name="guess_you_like">猜你喜欢</string>
 
     <!-- mine -->
     <string name="my_order">我的订单</string>

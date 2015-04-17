@@ -17,7 +17,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/blue_module" >
+                android:background="@drawable/pic_mine_background" >
 
                 <ImageButton
                     android:id="@+id/imageButton1"
@@ -26,7 +26,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:background="#00000000"
-                    android:src="@drawable/ic_launcher" />
+                    android:src="@drawable/pic_mine_default" />
             </RelativeLayout>
         </LinearLayout>
 
@@ -46,7 +46,9 @@
                     android:id="@+id/baseHomeButton1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:background="#AA1BA9BA"
                     android:text="@string/my_order" >
                 </com.app.base.BaseHomeButton>
 
@@ -54,7 +56,9 @@
                     android:id="@+id/baseHomeButton2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:background="#CC1BA9BA"
                     android:text="@string/my_bookstore" >
                 </com.app.base.BaseHomeButton>
 
@@ -62,7 +66,9 @@
                     android:id="@+id/baseHomeButton3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:background="#AA1BA9BA"
                     android:text="@string/my_collection" >
                 </com.app.base.BaseHomeButton>
             </LinearLayout>
@@ -77,7 +83,9 @@
                     android:id="@+id/baseHomeButton4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:background="#CC1BA9BA"
                     android:text="@string/my_bookfriends" >
                 </com.app.base.BaseHomeButton>
 
@@ -85,7 +93,9 @@
                     android:id="@+id/baseHomeButton5"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:background="#AA1BA9BA"
                     android:text="@string/my_message" >
                 </com.app.base.BaseHomeButton>
 
@@ -93,7 +103,9 @@
                     android:id="@+id/baseHomeButton6"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:background="#CC1BA9BA"
                     android:text="@string/my_settings" >
                 </com.app.base.BaseHomeButton>
             </LinearLayout>
@@ -108,6 +120,7 @@
                     android:id="@+id/baseHomeButton7"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:text="@string/search" >
                 </com.app.base.BaseHomeButton>
@@ -116,6 +129,7 @@
                     android:id="@+id/baseHomeButton8"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:text="@string/search" >
                 </com.app.base.BaseHomeButton>
@@ -124,6 +138,7 @@
                     android:id="@+id/baseHomeButton9"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:text="@string/search" >
                 </com.app.base.BaseHomeButton>

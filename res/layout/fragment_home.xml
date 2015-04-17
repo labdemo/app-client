@@ -3,27 +3,27 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-    
+
     <com.app.ui.TitleLayout
         android:id="@+id/homeTitleLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
     </com.app.ui.TitleLayout>
-    
+
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
-        
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="5dp" >
-            
+
             <LinearLayout
                 android:layout_width="fill_parent"
-            	android:layout_height="160dp"
-            	android:orientation="horizontal" >
+                android:layout_height="160dp"
+                android:orientation="horizontal" >
 
                 <com.app.base.BaseHomeButton
                     android:id="@+id/requestBookButton"
@@ -32,9 +32,9 @@
                     android:layout_weight="1"
                     android:background="@color/red_module"
                     android:text="@string/requst_book"
-                    android:textSize="25sp"
-                    android:textColor="@color/whitecolor" />
-                
+                    android:textColor="@color/whitecolor"
+                    android:textSize="25sp" />
+
                 <TextView
                     android:layout_width="5dp"
                     android:layout_height="fill_parent"
@@ -43,19 +43,20 @@
                 <com.app.base.BaseHomeButton
                     android:id="@+id/registerBookButton"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="fill_parent"
+                    android:layout_weight="1"
                     android:background="@color/blue_gray_module"
                     android:text="@string/register_book"
-                    android:textSize="25sp"
-                    android:textColor="@color/whitecolor" />
+                    android:textColor="@color/whitecolor"
+                    android:textSize="25sp" />
             </LinearLayout>
-            
+
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="180dp"
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal" >
+
                 <com.app.base.BaseHomeButton
                     android:id="@+id/teachingBookButton"
                     android:layout_width="0dp"
@@ -63,12 +64,14 @@
                     android:layout_weight="1"
                     android:background="@color/green_module"
                     android:text="@string/teaching_book"
-                    android:textSize="25sp"
-                    android:textColor="@color/whitecolor" />
+                    android:textColor="@color/whitecolor"
+                    android:textSize="25sp" />
+
                 <TextView
                     android:layout_width="5dp"
                     android:layout_height="fill_parent"
                     android:background="@color/whitecolor" />
+
                 <com.app.base.BaseHomeButton
                     android:id="@+id/goabroadBookButton"
                     android:layout_width="0dp"
@@ -76,12 +79,14 @@
                     android:layout_weight="1"
                     android:background="@color/blue_module"
                     android:text="@string/goabroad_book"
-                    android:textSize="25sp"
-                    android:textColor="@color/whitecolor" />
+                    android:textColor="@color/whitecolor"
+                    android:textSize="25sp" />
+
                 <TextView
                     android:layout_width="5dp"
                     android:layout_height="fill_parent"
                     android:background="@color/whitecolor" />
+
                 <com.app.base.BaseHomeButton
                     android:id="@+id/examfpgBookButton"
                     android:layout_width="0dp"
@@ -89,23 +94,23 @@
                     android:layout_weight="1"
                     android:background="@color/yellow_module"
                     android:text="@string/examfpg_book"
-                    android:textSize="25sp"
-                    android:textColor="@color/whitecolor" />
+                    android:textColor="@color/whitecolor"
+                    android:textSize="25sp" />
             </LinearLayout>
-            
+
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="10dp"
                 android:background="@color/whitecolor" />
+
             <com.app.base.BaseHomeButton
                 android:id="@+id/hotBookButton"
                 android:layout_width="fill_parent"
                 android:layout_height="120dp"
                 android:background="@color/bluegreen"
                 android:text="@string/specialty_hotbook"
-                android:textSize="25sp"
-                android:textColor="@color/whitecolor" />
-            
+                android:textColor="@color/whitecolor"
+                android:textSize="25sp" />
         </LinearLayout>
     </ScrollView>
 
