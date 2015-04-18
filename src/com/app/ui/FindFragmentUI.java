@@ -23,6 +23,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -45,7 +46,7 @@ public class FindFragmentUI extends BaseFragment {
 	private int[] imageResId; // 图片ID
 	private List<View> dots; // 图片标题正文的那些点
 
-	private TextView tv_title;
+	private TextView tvTitle;
 	private int currentItem = 0; // 当前图片的索引号
 
 	// An ExecutorService that can schedule commands to run after a given delay,
@@ -100,11 +101,11 @@ public class FindFragmentUI extends BaseFragment {
 		dots.add(findView.findViewById(R.id.v_dot3));
 		dots.add(findView.findViewById(R.id.v_dot4));
 
-		tv_title = (TextView) findView.findViewById(R.id.tv_title);
-		if (tv_title == null) {
+		tvTitle = (TextView) findView.findViewById(R.id.tv_title);
+		if (tvTitle == null) {
 			Log.e("why", "is null");
 		}
-		tv_title.setText(titles[0]);//
+		tvTitle.setText(titles[0]);//
 
 		viewPager = (ViewPager) findView.findViewById(R.id.vp);
 		viewPager.setAdapter(new MyAdapter());// 设置填充ViewPager页面的适配器
@@ -120,8 +121,8 @@ public class FindFragmentUI extends BaseFragment {
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		fragmentList = new ArrayList<Fragment>();
-		fragmentQuick = new FindFragment_quick();
-		fragmentGuess = new FindFragment_guess();
+		fragmentQuick = new FindFragmentQuick();
+		fragmentGuess = new FindFragmentGuess();
 		/*
 		 * FragmentTransaction mFragmentTransation = getFragmentManager()
 		 * .beginTransaction();
@@ -133,8 +134,26 @@ public class FindFragmentUI extends BaseFragment {
 		fragmentList.add(fragmentQuick);
 		fragmentList.add(fragmentGuess);
 		textViewQuick = (TextView) findView.findViewById(R.id.find_quick_order);
+		textViewQuick.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				mViewPager.setCurrentItem(0);
+			}
+
+		});
 		textViewGuess = (TextView) findView
 				.findViewById(R.id.find_guess_you_like);
+		textViewGuess.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				mViewPager.setCurrentItem(1);
+			}
+
+		});
 		mViewPager = (BaseViewPager) findView.findViewById(R.id.vp2);
 		/*
 		 * FragmentTransaction mFragmentTransation = fragmentManager
@@ -236,7 +255,7 @@ public class FindFragmentUI extends BaseFragment {
 		 */
 		public void onPageSelected(int position) {
 			currentItem = position;
-			tv_title.setText(titles[position]);
+			tvTitle.setText(titles[position]);
 			dots.get(oldPosition).setBackgroundResource(R.drawable.dot_normal);
 			dots.get(position).setBackgroundResource(R.drawable.dot_focused);
 			oldPosition = position;

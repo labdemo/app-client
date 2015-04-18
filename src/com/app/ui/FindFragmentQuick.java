@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.app.base.BaseFragment;
 import com.app.base.R;
 
-public class FindFragment_quick extends BaseFragment {
+public class FindFragmentQuick extends BaseFragment {
 	private View view;
 
 	@Override

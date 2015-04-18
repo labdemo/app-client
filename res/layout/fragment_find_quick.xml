@@ -9,7 +9,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="hha" >
+        android:layout_gravity="center_horizontal"
+        android:text="这是第一个listview"
+        android:textSize="30sp" >
     </TextView>
 
 </LinearLayout>

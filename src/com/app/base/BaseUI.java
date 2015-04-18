@@ -10,7 +10,7 @@ public class BaseUI extends BaseActivity {
 		super.onCreate(savedInstanceState);
 	}
 	
-	//启动下一个Activity
+	//启动下一个Aactivity
 	public void forward(Class<?> classObj){
 		Intent intent = new Intent();
 		intent.setClass(this, classObj);

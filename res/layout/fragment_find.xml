@@ -6,7 +6,7 @@
     android:orientation="vertical" >
 
     <com.app.base.BaseTitleLayout
-        android:id="@+id/homeTitleLayout"
+        android:id="@+id/FindTitleLayout"
         android:layout_width="fill_parent"
         android:layout_height="55dp"
         android:background="@color/titlebar_blue" >

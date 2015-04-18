@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import com.app.base.BaseFragment;
 import com.app.base.R;
 
-public class FindFragment_guess extends BaseFragment {
+public class FindFragmentGuess extends BaseFragment {
 
 	private View view;
 
