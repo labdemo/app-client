@@ -4,5 +4,10 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
     
+    <com.app.ui.TitleLayout
+        android:id="@+id/mineDetailsLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    </com.app.ui.TitleLayout>
 
 </LinearLayout>

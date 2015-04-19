@@ -16,7 +16,6 @@ public class HomeFragmentUI extends BaseFragment {
 	
 	private View homeView;
 	private BaseHomeButton requestBookButton, registerBookButton, teachingBookButton, goabroadBookButton, examfpgBookButton;
-	private TitleLayout homeTitleLayout;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,7 +33,6 @@ public class HomeFragmentUI extends BaseFragment {
 		teachingBookButton = (BaseHomeButton)homeView.findViewById(R.id.teachingBookButton);
 		goabroadBookButton = (BaseHomeButton)homeView.findViewById(R.id.goabroadBookButton);
 		examfpgBookButton = (BaseHomeButton)homeView.findViewById(R.id.examfpgBookButton);
-		homeTitleLayout = (TitleLayout)homeView.findViewById(R.id.homeTitleLayout);
 	}
 	
 	class BaseHomeButtonListener implements OnClickListener{
@@ -70,9 +68,6 @@ public class HomeFragmentUI extends BaseFragment {
 		teachingBookButton.setOnClickListener(mListener);
 		goabroadBookButton.setOnClickListener(mListener);
 		examfpgBookButton.setOnClickListener(mListener);
-		homeTitleLayout.setBackTitle(null, null, false);
-		homeTitleLayout.setCenterTitleClick(true);
-		homeTitleLayout.setRightTitle(getResources().getString(R.string.home_page));
 	}
 	
 	

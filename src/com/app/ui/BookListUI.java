@@ -1,6 +1,7 @@
 package com.app.ui;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.app.base.BaseUI;
 import com.app.base.C;
@@ -24,33 +25,29 @@ public class BookListUI extends BaseUI{
 
 	private void initViews() {
 		bookListTitleLayout = (TitleLayout)findViewById(R.id.bookListTitleLayout);
+		bookListTitleLayout.setBackTitleVisibility(View.VISIBLE);
+		
 	}
 	
 	private void initEvents() {
 		
 		switch(getRequestCode){
 		case C.START_REGISTER_BOOK:
-			bookListTitleLayout.setRightTitle(getResources().getString(R.string.register_book));
-			bookListTitleLayout.setCenterTitleClick(true);
+			bookListTitleLayout.setCenterTitle(R.string.register_book);
 			break;
 		case C.START_TEACH_BOOK:
-			bookListTitleLayout.setRightTitle(getResources().getString(R.string.teaching_book));
-			bookListTitleLayout.setCenterTitleClick(true);
+			bookListTitleLayout.setCenterTitle(R.string.teaching_book);
 			break;
 		case C.START_GOABROAD_BOOK:
-			bookListTitleLayout.setRightTitle(getResources().getString(R.string.goabroad_book));
-			bookListTitleLayout.setCenterTitleClick(true);
+			bookListTitleLayout.setCenterTitle(R.string.goabroad_book);
 			break;
 		case C.START_EXAMFPG_BOOK:
-			bookListTitleLayout.setRightTitle(getResources().getString(R.string.examfpg_book));
-			bookListTitleLayout.setCenterTitleClick(true);
+			bookListTitleLayout.setCenterTitle(R.string.examfpg_book);
 			break;
 		case C.ERROR:
 			break;
 		default:
 			break;
 		}
-		
 	}
-	
 }

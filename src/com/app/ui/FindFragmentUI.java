@@ -6,31 +6,23 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.ImageView.ScaleType;
+import android.widget.TextView;
 
-import com.app.adapter.BookListAdapter;
 import com.app.base.BaseFragment;
 import com.app.base.BaseViewPager;
 import com.app.base.R;
@@ -39,27 +31,27 @@ public class FindFragmentUI extends BaseFragment {
 
 	private View findView;
 
-	private ViewPager viewPager; // android-support-v4ÖÐµÄ»¬¶¯×é¼þ
-	private List<ImageView> imageViews; // »¬¶¯µÄÍ¼Æ¬¼¯ºÏ
+	private BaseViewPager viewPager; // android-support-v4ï¿½ÐµÄ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private List<ImageView> imageViews; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½
 
-	private String[] titles; // Í¼Æ¬±êÌâ
+	private String[] titles; // Í¼Æ¬ï¿½ï¿½ï¿½ï¿½
 	private int[] imageResId; // Í¼Æ¬ID
-	private List<View> dots; // Í¼Æ¬±êÌâÕýÎÄµÄÄÇÐ©µã
+	private List<View> dots; // Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½Ð©ï¿½ï¿½
 
 	private TextView tvTitle;
-	private int currentItem = 0; // µ±Ç°Í¼Æ¬µÄË÷ÒýºÅ
+	private int currentItem = 0; // ï¿½ï¿½Ç°Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	// An ExecutorService that can schedule commands to run after a given delay,
 	// or to execute periodically.
 	private ScheduledExecutorService scheduledExecutorService;
 
-	// ÇÐ»»µ±Ç°ÏÔÊ¾µÄÍ¼Æ¬
+	// ï¿½Ð»ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Ê¾ï¿½ï¿½Í¼Æ¬
 	private Handler handler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
-			viewPager.setCurrentItem(currentItem);// ÇÐ»»µ±Ç°ÏÔÊ¾µÄÍ¼Æ¬
+			viewPager.setCurrentItem(currentItem);// ï¿½Ð»ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Ê¾ï¿½ï¿½Í¼Æ¬
 		};
 	};
-	// ¿ìËÙÇÀµ¥£¬²ÂÄãÏ²»¶±äÁ¿³õÊ¼»¯
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
 	private TextView textViewQuick;
 	private TextView textViewGuess;
 	private BaseViewPager mViewPager;
@@ -73,7 +65,7 @@ public class FindFragmentUI extends BaseFragment {
 		super.onCreate(savedInstanceState);
 		findView = inflater.inflate(R.layout.fragment_find, null);
 
-		// ×Ô¶¯ÇÐ»»Í¼Æ¬
+		// ï¿½Ô¶ï¿½ï¿½Ð»ï¿½Í¼Æ¬
 		imageResId = new int[] { R.drawable.ic_launcher,
 				R.drawable.ic_launcher, R.drawable.ic_launcher,
 				R.drawable.pic_account, R.drawable.ic_launcher };
@@ -86,7 +78,7 @@ public class FindFragmentUI extends BaseFragment {
 
 		imageViews = new ArrayList<ImageView>();
 
-		// ³õÊ¼»¯Í¼Æ¬×ÊÔ´
+		// ï¿½ï¿½Ê¼ï¿½ï¿½Í¼Æ¬ï¿½ï¿½Ô´
 		for (int i = 0; i < imageResId.length; i++) {
 			ImageView imageView = new ImageView(findView.getContext());
 			imageView.setImageResource(imageResId[i]);
@@ -107,17 +99,17 @@ public class FindFragmentUI extends BaseFragment {
 		}
 		tvTitle.setText(titles[0]);//
 
-		viewPager = (ViewPager) findView.findViewById(R.id.vp);
-		viewPager.setAdapter(new MyAdapter());// ÉèÖÃÌî³äViewPagerÒ³ÃæµÄÊÊÅäÆ÷
-		// ÉèÖÃÒ»¸ö¼àÌýÆ÷£¬µ±ViewPagerÖÐµÄÒ³Ãæ¸Ä±äÊ±µ÷ÓÃ
+		viewPager = (BaseViewPager) findView.findViewById(R.id.vp);
+		viewPager.setAdapter(new MyAdapter());// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ViewPagerÒ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ViewPagerï¿½Ðµï¿½Ò³ï¿½ï¿½Ä±ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 		viewPager.setOnPageChangeListener(new MyPageChangeListener());
-		// ×Ô¶¯³õÊ¼»¯Í¼Æ¬½áÊø
+		// ï¿½Ô¶ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½
 
 		return findView;
 
 	}
 
-	// ¿ìËÙÇÀµ¥£¬²ÂÄãÏ²»¶½çÃæ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		fragmentList = new ArrayList<Fragment>();
@@ -209,7 +201,7 @@ public class FindFragmentUI extends BaseFragment {
 	@Override
 	public void onStart() {
 		scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-		// µ±ActivityÏÔÊ¾³öÀ´ºó£¬Ã¿Á½ÃëÖÓÇÐ»»Ò»´ÎÍ¼Æ¬ÏÔÊ¾
+		// ï¿½ï¿½Activityï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½Ò»ï¿½ï¿½Í¼Æ¬ï¿½ï¿½Ê¾
 		scheduledExecutorService.scheduleAtFixedRate(new ScrollTask(), 1, 2,
 				TimeUnit.SECONDS);
 		super.onStart();
@@ -217,13 +209,13 @@ public class FindFragmentUI extends BaseFragment {
 
 	@Override
 	public void onStop() {
-		// µ±Activity²»¿É¼ûµÄÊ±ºòÍ£Ö¹ÇÐ»»
+		// ï¿½ï¿½Activityï¿½ï¿½ï¿½É¼ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Í£Ö¹ï¿½Ð»ï¿½
 		scheduledExecutorService.shutdown();
 		super.onStop();
 	}
 
 	/**
-	 * »»ÐÐÇÐ»»ÈÎÎñ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @author Administrator
 	 * 
@@ -234,14 +226,14 @@ public class FindFragmentUI extends BaseFragment {
 			synchronized (viewPager) {
 				System.out.println("currentItem: " + currentItem);
 				currentItem = (currentItem + 1) % imageViews.size();
-				handler.obtainMessage().sendToTarget(); // Í¨¹ýHandlerÇÐ»»Í¼Æ¬
+				handler.obtainMessage().sendToTarget(); // Í¨ï¿½ï¿½Handlerï¿½Ð»ï¿½Í¼Æ¬
 			}
 		}
 
 	}
 
 	/**
-	 * µ±ViewPagerÖÐÒ³ÃæµÄ×´Ì¬·¢Éú¸Ä±äÊ±µ÷ÓÃ
+	 * ï¿½ï¿½ViewPagerï¿½ï¿½Ò³ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @author Administrator
 	 * 
@@ -271,7 +263,7 @@ public class FindFragmentUI extends BaseFragment {
 	}
 
 	/**
-	 * Ìî³äViewPagerÒ³ÃæµÄÊÊÅäÆ÷
+	 * ï¿½ï¿½ï¿½ViewPagerÒ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @author Administrator
 	 * 

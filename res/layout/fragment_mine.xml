@@ -1,75 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical" >
-
-        <com.app.base.BaseTitleLayout
-            android:id="@+id/MineTitleLayout"
+        
+        <RelativeLayout
+            android:id="@+id/minePic"
             android:layout_width="fill_parent"
-            android:layout_height="55dp"
-            android:background="@color/titlebar_blue" >
-
-            <TextView
+            android:layout_height="200dp"
+            android:background="@drawable/pic_mine_background" >
+            
+            <ImageView
+                android:id="@+id/head_defalut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="@string/minetitle_text"
-                android:textSize="17sp" >
-            </TextView>
-        </com.app.base.BaseTitleLayout>
-
-        <LinearLayout
-            android:id="@+id/minePic"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:orientation="vertical" >
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/pic_mine_background" >
-
-                <ImageButton
-                    android:id="@+id/head_defalut"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:background="#00000000"
-                    android:src="@drawable/pic_mine_default" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/head_defalut"
-                    android:layout_centerHorizontal="true"
-                    android:text="@string/user_name"
-                    android:textSize="12sp" />
-            </RelativeLayout>
-        </LinearLayout>
+                android:src="@drawable/pic_mine_default" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/head_defalut"
+                android:layout_centerHorizontal="true"
+                android:text="@string/user_name"
+                android:textSize="12sp" />
+        </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/mineSettings"
-            android:layout_width="match_parent"
-            android:layout_height="480dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="2.5dp"
             android:orientation="vertical" >
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="180dp"
                 android:orientation="horizontal" >
 
                 <com.app.base.BaseHomeButton
                     android:id="@+id/my_order_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="2.5dp"
                     android:layout_weight="1"
                     android:background="@color/blue_module"
                     android:text="@string/my_order" >
@@ -77,9 +54,9 @@
 
                 <com.app.base.BaseHomeButton
                     android:id="@+id/my_book_store_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="2.5dp"
                     android:layout_weight="1"
                     android:background="@color/blue_module"
                     android:text="@string/my_bookstore" >
@@ -87,9 +64,9 @@
 
                 <com.app.base.BaseHomeButton
                     android:id="@+id/my_collection_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="2.5dp"
                     android:layout_weight="1"
                     android:background="@color/blue_module"
                     android:text="@string/my_collection" >
@@ -97,16 +74,15 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="180dp"
                 android:orientation="horizontal" >
 
                 <com.app.base.BaseHomeButton
                     android:id="@+id/my_book_friends_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="2.5dp"
                     android:layout_weight="1"
                     android:background="@color/blue_module"
                     android:text="@string/my_book_friends" >
@@ -114,9 +90,9 @@
 
                 <com.app.base.BaseHomeButton
                     android:id="@+id/my_message_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="2.5dp"
                     android:layout_weight="1"
                     android:background="@color/blue_module"
                     android:text="@string/my_message" >
@@ -124,46 +100,12 @@
 
                 <com.app.base.BaseHomeButton
                     android:id="@+id/my_settings_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="2.5dp"
                     android:layout_weight="1"
                     android:background="@color/blue_module"
                     android:text="@string/my_settings" >
-                </com.app.base.BaseHomeButton>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:orientation="horizontal" >
-
-                <com.app.base.BaseHomeButton
-                    android:id="@+id/baseHomeButton7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:text="@string/search" >
-                </com.app.base.BaseHomeButton>
-
-                <com.app.base.BaseHomeButton
-                    android:id="@+id/baseHomeButton8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:text="@string/search" >
-                </com.app.base.BaseHomeButton>
-
-                <com.app.base.BaseHomeButton
-                    android:id="@+id/baseHomeButton9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:text="@string/search" >
                 </com.app.base.BaseHomeButton>
             </LinearLayout>
         </LinearLayout>

@@ -61,6 +61,18 @@
         android:textSize="17sp" />
     
     <TextView
+        android:id="@+id/registerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/login"
+        android:layout_marginTop="15dp"
+        android:textSize="16sp"
+        android:text="@string/register"
+        android:drawableRight="@drawable/pic_doubleright"
+        android:drawablePadding="5dp" />
+    
+    <TextView
         android:id="@+id/forgetPasswordText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,16 +81,6 @@
         android:layout_margin="5dp"
         android:textSize="13sp"
         android:text="@string/forget_password" />
-    
-    <TextView
-        android:id="@+id/registerText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="5dp"
-        android:textSize="13sp"
-        android:text="@string/register" />
     
 
 </RelativeLayout>
