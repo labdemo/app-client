@@ -1,7 +1,8 @@
 package com.app.ui;
 
+import java.util.HashMap;
+
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
@@ -13,7 +14,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.app.base.BaseActivity;
+import com.app.base.BaseAuth;
+import com.app.base.BaseMessage;
+import com.app.base.C;
 import com.app.base.R;
+import com.app.model.Customer;
 
 public class LoginUI extends BaseActivity{
 	
@@ -29,10 +34,11 @@ public class LoginUI extends BaseActivity{
 		super.onCreate(savedInstanceState);
 		
 		//如果已经登录，则直接跳转至main，否则显示登陆界面
-//		if(BaseAuth.isLogin()){
-//			LoginUI.this.forward(MainUI.class);
-//			LoginUI.this.finish();
-//		}
+		if(BaseAuth.isLogin()){
+			LoginUI.this.forward(MainUI.class);
+			LoginUI.this.finish();
+		}
+		
 		setContentView(R.layout.activity_login);
 		
 		settings = getPreferences(Context.MODE_PRIVATE);
@@ -87,7 +93,7 @@ public class LoginUI extends BaseActivity{
 					}
 					editor.commit();
 					//执行异步登陆
-					doLogin();
+					doLogin(account, password);
 				} else {
 					toast("用户名和密码不能为空！");
 				}
@@ -99,16 +105,43 @@ public class LoginUI extends BaseActivity{
 				break;
 			}
 		}
-		
 	}
 	
-	private void doLogin(){
-		
-		
-		LoginUI.this.forward(MainUI.class);
-		LoginUI.this.finish();
+	private void doLogin(String account, String password){
+		HashMap<String, String> userInfo = new HashMap<String, String>();
+		userInfo.put("username", account);
+		userInfo.put("password", password);
+		try{
+			this.doTaskAsync(C.task.login, C.api.login, userInfo);
+		} catch (Exception e){
+			e.printStackTrace();
+		}
 	}
 	
-	
+	@Override
+	public void onTaskComplete(int taskID, BaseMessage message) {
+		super.onTaskComplete(taskID, message);
+		if(taskID == C.task.login){
+			Customer customer = null;
+			try{
+				customer = (Customer) message.getResult("Customer");
+				if(customer.getUser_name() != null){
+					BaseAuth.setCustomer(customer);
+					BaseAuth.setLogin(true);
+					toast(getString(R.string.login_success));
+				} else {
+//					BaseAuth.setCustomer(customer);
+					BaseAuth.setLogin(false);
+					toast(getString(R.string.login_failed));
+				}
+			} catch (Exception e){
+				e.printStackTrace();
+			}
+			if(BaseAuth.isLogin()){
+				//开启后台服务推送notification
+				forward(MainUI.class);
+			}
+		}
+	}
 	
 }

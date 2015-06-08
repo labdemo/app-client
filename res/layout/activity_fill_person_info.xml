@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp"
+    android:stretchColumns="1" >
+
+    <TableRow>
+
+        <TextView
+            android:layout_height="40dp"
+            android:text="@string/name" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_height="40dp"
+            android:hint="@string/input_name" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_height="40dp"
+            android:text="@string/sex" />
+
+        <RadioGroup
+            android:id="@+id/sexRadioGroup"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/male"
+                android:layout_height="40dp"
+                android:text="@string/male" />
+
+            <RadioButton
+                android:id="@+id/female"
+                android:layout_height="40dp"
+                android:text="@string/female" />
+        </RadioGroup>
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_height="40dp"
+            android:text="@string/major" />
+
+        <Spinner
+            android:id="@+id/majorGroup"
+            android:layout_height="40dp"
+            android:entries="@array/major_group"
+            android:spinnerMode="dropdown" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_height="40dp"
+            android:text="@string/grade" />
+
+        <Spinner
+            android:id="@+id/gradeGroup"
+            android:layout_height="40dp"
+            android:entries="@array/grade_group"
+            android:spinnerMode="dropdown" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_height="40dp"
+            android:text="@string/phone" />
+
+        <EditText
+            android:id="@+id/phoneEditText"
+            android:layout_height="40dp"
+            android:hint="@string/input_phone" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_height="40dp"
+            android:text="@string/QQ" />
+
+        <EditText
+            android:id="@+id/QQEditText"
+            android:layout_height="40dp"
+            android:hint="@string/input_QQ" />
+    </TableRow>
+
+    <Button
+        android:id="@+id/personInfoSubmit"
+        android:background="@drawable/button_selected_blue"
+        android:text="@string/complete" />
+
+</TableLayout>

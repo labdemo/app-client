@@ -5,7 +5,7 @@
     android:background="@color/titlebar_blue"
     android:padding="10dp" >
 
-    <TextView
+    <com.app.base.BaseTextView
         android:id="@+id/titleBackText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
         android:textColor="@color/whitecolor"
         android:textSize="21sp" />
 
-    <TextView
+    <com.app.base.BaseTextView
         android:id="@+id/titleRightText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

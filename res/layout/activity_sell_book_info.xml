@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <com.app.ui.TitleLayout
+        android:id="@+id/sellBookInfoTitleLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.app.ui.TitleLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="180dp" >
+        
+    </LinearLayout>
+    
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:stretchColumns="1" >
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="40dp"
+                android:text="@string/book_name" />
+
+            <EditText
+                android:id="@+id/bookNameEditText"
+                android:layout_height="40dp"
+                android:hint="@string/book_name_input" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="40dp"
+                android:text="@string/book_desc" />
+
+            <EditText
+                android:id="@+id/bookDescEditText"
+                android:layout_height="40dp"
+                android:hint="@string/book_desc_single" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="40dp"
+                android:text="@string/classify" />
+
+            <Spinner
+                android:id="@+id/bookClassifyGroup"
+                android:layout_height="40dp"
+                android:entries="@array/book_classify_group"
+                android:spinnerMode="dropdown" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="40dp"
+                android:text="@string/price" />
+
+            <EditText
+                android:id="@+id/bookRepayEditText"
+                android:layout_height="40dp"
+                android:hint="@string/price_single" />
+        </TableRow>
+
+        <TextView
+            android:layout_height="40dp"
+            android:text="@string/try_price" />
+
+        <Button
+            android:id="@+id/bookInfoSubmit"
+            android:background="@drawable/button_selected_blue"
+            android:text="@string/complete"
+            android:textColor="@color/whitecolor" />
+    </TableLayout>
+
+</LinearLayout>

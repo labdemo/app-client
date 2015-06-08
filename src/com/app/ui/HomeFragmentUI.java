@@ -15,7 +15,7 @@ import com.app.base.R;
 public class HomeFragmentUI extends BaseFragment {
 	
 	private View homeView;
-	private BaseHomeButton requestBookButton, registerBookButton, teachingBookButton, goabroadBookButton, examfpgBookButton;
+	private BaseHomeButton requestBookButton, sellBookButton, teachingBookButton, goabroadBookButton, examfpgBookButton, othersButton;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,10 +29,11 @@ public class HomeFragmentUI extends BaseFragment {
 
 	private void initViews() {
 		requestBookButton = (BaseHomeButton)homeView.findViewById(R.id.requestBookButton);
-		registerBookButton = (BaseHomeButton)homeView.findViewById(R.id.registerBookButton);
+		sellBookButton = (BaseHomeButton)homeView.findViewById(R.id.sellBookButton);
 		teachingBookButton = (BaseHomeButton)homeView.findViewById(R.id.teachingBookButton);
 		goabroadBookButton = (BaseHomeButton)homeView.findViewById(R.id.goabroadBookButton);
 		examfpgBookButton = (BaseHomeButton)homeView.findViewById(R.id.examfpgBookButton);
+		othersButton = (BaseHomeButton)homeView.findViewById(R.id.othersButton);
 	}
 	
 	class BaseHomeButtonListener implements OnClickListener{
@@ -42,8 +43,8 @@ public class HomeFragmentUI extends BaseFragment {
 			case R.id.requestBookButton:
 				((BaseUI) getActivity()).forward(RequestBookListUI.class);
 				break;
-			case R.id.registerBookButton:
-				((BaseUI) getActivity()).forward(BookListUI.class, C.START_REGISTER_BOOK);
+			case R.id.sellBookButton:
+				((BaseUI) getActivity()).forward(SellBookUI.class);
 				break;
 			case R.id.teachingBookButton:
 				((BaseUI) getActivity()).forward(BookListUI.class, C.START_TEACH_BOOK);
@@ -54,21 +55,23 @@ public class HomeFragmentUI extends BaseFragment {
 			case R.id.examfpgBookButton:
 				((BaseUI) getActivity()).forward(BookListUI.class, C.START_EXAMFPG_BOOK);
 				break;
+			case R.id.othersButton:
+				((BaseUI) getActivity()).forward(BookListUI.class, C.START_OTHER_BOOK);
+				break;
 			default:
 				break;
 			}
 		}
-		
 	}
 	
 	private void initEvents(){
 		BaseHomeButtonListener mListener = new BaseHomeButtonListener();
 		requestBookButton.setOnClickListener(mListener);
-		registerBookButton.setOnClickListener(mListener);
+		sellBookButton.setOnClickListener(mListener);
 		teachingBookButton.setOnClickListener(mListener);
 		goabroadBookButton.setOnClickListener(mListener);
 		examfpgBookButton.setOnClickListener(mListener);
+		othersButton.setOnClickListener(mListener);
 	}
-	
 	
 }

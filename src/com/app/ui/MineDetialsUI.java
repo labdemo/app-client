@@ -34,12 +34,6 @@ private TitleLayout mineDetailsLayout;
 		case C.START_MY_COLLECTION:
 			mineDetailsLayout.setCenterTitle(R.string.my_collection);
 			break;
-		case C.START_MY_BOOK_FRIENDS:
-			mineDetailsLayout.setCenterTitle(R.string.my_book_friends);
-			break;
-		case C.START_MY_MESSAGE:
-			mineDetailsLayout.setCenterTitle(R.string.my_message);
-			break;
 		case C.START_MY_SETTINGS:
 			mineDetailsLayout.setCenterTitle(R.string.my_settings);
 			break;

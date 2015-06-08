@@ -15,7 +15,7 @@ import com.app.base.R;
 public class MineFragmentUI extends BaseFragment {
 
 	private View mineView;
-	private Button myOrder, myBookStore, myCollection, myBookFriends, myMessage, mySettings;
+	private Button myOrder, myBookStore, myCollection, mySettings;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -27,12 +27,10 @@ public class MineFragmentUI extends BaseFragment {
 	}
 
 	private void initViews() {
-		myOrder = (Button) mineView.findViewById(R.id.my_order_button);
-		myBookStore = (Button) mineView.findViewById(R.id.my_book_store_button);
-		myCollection = (Button) mineView .findViewById(R.id.my_collection_button);
-		myBookFriends = (Button) mineView .findViewById(R.id.my_book_friends_button);
-		myMessage = (Button) mineView.findViewById(R.id.my_message_button);
-		mySettings = (Button) mineView.findViewById(R.id.my_settings_button);
+		myOrder = (Button) mineView.findViewById(R.id.myOrder);
+		myBookStore = (Button) mineView.findViewById(R.id.myBookStore);
+		myCollection = (Button) mineView .findViewById(R.id.myCollection);
+		mySettings = (Button) mineView.findViewById(R.id.mySettings);
 	}
 
 	private void initEvents() {
@@ -40,8 +38,6 @@ public class MineFragmentUI extends BaseFragment {
 		myOrder.setOnClickListener(mMineFragmentUIButtonListener);
 		myBookStore.setOnClickListener(mMineFragmentUIButtonListener);
 		myCollection.setOnClickListener(mMineFragmentUIButtonListener);
-		myBookFriends.setOnClickListener(mMineFragmentUIButtonListener);
-		myMessage.setOnClickListener(mMineFragmentUIButtonListener);
 		mySettings.setOnClickListener(mMineFragmentUIButtonListener);
 	}
 
@@ -50,22 +46,16 @@ public class MineFragmentUI extends BaseFragment {
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {
-			case R.id.my_order_button:
+			case R.id.myOrder:
 				((BaseUI) getActivity()).forward(MineDetialsUI.class, C.START_MY_ORDER);
 				break;
-			case R.id.my_book_store_button:
+			case R.id.myBookStore:
 				((BaseUI) getActivity()).forward(MineDetialsUI.class, C.START_MY_BOOK_STORE);
 				break;
-			case R.id.my_collection_button:
+			case R.id.myCollection:
 				((BaseUI) getActivity()).forward(MineDetialsUI.class, C.START_MY_COLLECTION);
 				break;
-			case R.id.my_book_friends_button:
-				((BaseUI) getActivity()).forward(MineDetialsUI.class, C.START_MY_BOOK_FRIENDS);
-				break;
-			case R.id.my_message_button:
-				((BaseUI) getActivity()).forward(MineDetialsUI.class, C.START_MY_MESSAGE);
-				break;
-			case R.id.my_settings_button:
+			case R.id.mySettings:
 				((BaseUI) getActivity()).forward(MineDetialsUI.class, C.START_MY_SETTINGS);
 				break;
 			}

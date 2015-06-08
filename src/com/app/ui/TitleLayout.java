@@ -16,7 +16,7 @@ public class TitleLayout extends RelativeLayout {
 
 	public TitleLayout(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		LayoutInflater.from(context).inflate(R.layout.layout_top, this);
+		LayoutInflater.from(context).inflate(R.layout.layout_title, this);
 		titleCenterText = (TextView)findViewById(R.id.titleCenterText);
 		titleBackText = (TextView)findViewById(R.id.titleBackText);
 		titleRightText = (TextView)findViewById(R.id.titleRightText);

@@ -10,7 +10,9 @@ public class Customer extends BaseModel{
 	private String id = null;
 	private String user_name = null;
 	private String password = null;
+	
 	private String name = null;
+	private String sex = null;
 	private String grade_id = null;
 	private String phone = null;
 	private String QQ = null;
@@ -52,6 +54,13 @@ public class Customer extends BaseModel{
 		return this.name;
 	}
 	
+	public void setSex(String sex){
+		this.sex = sex;
+	}
+	public String getSex(){
+		return this.sex;
+	}
+	
 	public void setGrade_id(String grade_id){
 		this.grade_id = grade_id;
 	}
@@ -78,6 +87,24 @@ public class Customer extends BaseModel{
 	}
 	public String getMajor_id(){
 		return this.major_id;
+	}
+	
+	
+	//for login customer
+	private static Customer customer = null;
+	public static Customer getCustomer(){
+		return customer;
+	}
+	
+	public static Customer getInstance() {
+		if (Customer.customer == null) {
+			Customer.customer = new Customer();
+        }
+        return Customer.customer;
+	}
+	
+	public static void setCustomer(Customer customer){
+		Customer.customer = customer;
 	}
 
 }

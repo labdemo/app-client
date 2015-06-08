@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:padding="10dp"
     android:orientation="vertical" >
     
     <EditText
         android:id="@+id/accountText"
         android:layout_width="fill_parent"
         android:layout_height="45dp"
-        android:layout_below="@+id/logo"
         android:background="@drawable/edittext_login"
         android:hint="@string/input_account"
         android:layout_marginTop="20dp"
@@ -21,7 +21,6 @@
         android:id="@+id/passwordText"
         android:layout_width="fill_parent"
         android:layout_height="45dp"
-        android:layout_below="@+id/accountText"
         android:background="@drawable/edittext_login"
         android:hint="@string/input_password"
         android:paddingLeft="10dp"
@@ -29,5 +28,24 @@
         android:singleLine="true"
         android:maxLength="15"
         android:inputType="textPassword" />
+    
+    <EditText
+        android:id="@+id/passwordTextAgain"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/edittext_login"
+        android:hint="@string/input_password_again"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:singleLine="true"
+        android:maxLength="15"
+        android:inputType="textPassword" />
+    
+    <Button
+        android:id="@+id/registerSubmit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selected_blue"
+        android:text="@string/complete" />
     
 </LinearLayout>
